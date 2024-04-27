@@ -24,9 +24,9 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/addFragment2"
-        android:name="com.example.berryapp.AddFragment"
+        android:name="com.example.berryapp.DeviceFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_add" />
+        tools:layout="@layout/fragment_device" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.berryapp.LoginFragment"

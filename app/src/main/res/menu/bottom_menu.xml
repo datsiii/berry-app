@@ -3,8 +3,8 @@
 
     <item android:id="@+id/homeFragment2"
         android:icon="@drawable/ic_home_24"
-        android:title="Home"/>
+        android:title="Дом"/>
     <item android:id="@+id/addFragment2"
         android:icon="@drawable/ic_cube2_24"
-        android:title="Device"/>
+        android:title="Устройство"/>
 </menu>
