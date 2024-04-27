@@ -25,6 +25,9 @@ class LoginFragment : Fragment() {
             loginButton.setOnClickListener {
                 findNavController().navigate(R.id.action_loginFragment_to_homeFragment2)
             }
+            redirectReg.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_registrationFragment2)
+            }
         }
     }
 }
