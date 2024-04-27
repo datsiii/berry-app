@@ -1,31 +1,30 @@
 package com.example.berryapp
 
 import android.os.Bundle
-import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.berryapp.databinding.FragmentLoginBinding
 
-class SplashFragment : Fragment() {
+class LoginFragment : Fragment() {
 
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+        binding = FragmentLoginBinding.inflate(layoutInflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Handler(requireActivity().mainLooper).postDelayed({
-            if(true){
-                findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        binding.apply {
+            loginButton.setOnClickListener {
+                findNavController().navigate(R.id.action_loginFragment_to_homeFragment2)
             }
-            else{
-                findNavController().navigate(R.id.action_splashFragment_to_homeFragment2)
-            }
-        }, 3000L)
+        }
     }
 }
