@@ -14,7 +14,7 @@ import com.example.berryapp.R
 
 class WiFiReceiver(var wifiManager: WifiManager, wifiDeviceList: ListView) : BroadcastReceiver(){
     var sb: StringBuilder? = null
-    private lateinit var wifiDeviceList: RecyclerView
+    private lateinit var wifiDeviceList: ListView
     override fun onReceive(context: Context?, intent: Intent?) {
         val action = intent!!.action
         if (WifiManager.SCAN_RESULTS_AVAILABLE_ACTION == action){
@@ -33,16 +33,15 @@ class WiFiReceiver(var wifiManager: WifiManager, wifiDeviceList: ListView) : Bro
             Toast.makeText(context, sb, Toast.LENGTH_SHORT).show()
 
             val arrayAdapter: ArrayAdapter<*> = ArrayAdapter(context!!.applicationContext,
-                R.layout.dat_list_item,
+                android.R.layout.simple_list_item_1,
                 deviceList.toArray()
                 )
-                wifiDeviceList.adapter = CustomRecyclerAdapter(fillList())
+                wifiDeviceList.adapter = arrayAdapter
         }
     }
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..10).forEach { i -> data.add("$i wifi") }
-        return data
+    init {
+        this.wifiDeviceList = wifiDeviceList
     }
+
 
 }

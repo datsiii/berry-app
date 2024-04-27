@@ -64,7 +64,8 @@ class WiFiFragment : Fragment() {
         }
         btnScan.setOnClickListener{
             val appPerms = arrayOf(
-                Manifest.permission.ACCESS_COARSE_LOCATION
+                Manifest.permission.ACCESS_COARSE_LOCATION,
+                Manifest.permission.ACCESS_FINE_LOCATION
             )
             activityResultLauncher.launch(appPerms)
         }
