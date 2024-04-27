@@ -26,7 +26,11 @@
         android:id="@+id/addFragment2"
         android:name="com.example.berryapp.DeviceFragment"
         android:label="fragment_add"
-        tools:layout="@layout/fragment_device" />
+        tools:layout="@layout/fragment_device" >
+        <action
+            android:id="@+id/action_addFragment2_to_wiFiFragment"
+            app:destination="@id/wiFiFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.berryapp.LoginFragment"
@@ -48,4 +52,9 @@
             android:id="@+id/action_registrationFragment2_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/wiFiFragment"
+        android:name="com.example.berryapp.WiFiFragment"
+        android:label="fragment_wi_fi"
+        tools:layout="@layout/fragment_wi_fi" />
 </navigation>
