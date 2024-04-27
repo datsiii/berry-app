@@ -50,9 +50,6 @@ class WiFiFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        /*val recyclerView: RecyclerView = binding.recyclerView
-        recyclerView.layoutManager = LinearLayoutManager(requireContext())
-        recyclerView.adapter = CustomRecyclerAdapter(fillList())*/
         wifiList = binding.recyclerViewWifi
         val btnScan = binding.scanBtn
 
@@ -69,11 +66,6 @@ class WiFiFragment : Fragment() {
             )
             activityResultLauncher.launch(appPerms)
         }
-    }
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..10).forEach { i -> data.add("$i device") }
-        return data
     }
 
     override fun onResume() {

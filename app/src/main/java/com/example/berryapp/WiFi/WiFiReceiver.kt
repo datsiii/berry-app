@@ -26,7 +26,7 @@ class WiFiReceiver(var wifiManager: WifiManager, wifiDeviceList: ListView) : Bro
                 sb!!.append("\n").append(scanResults.SSID).append(" _ ")
                     .append(scanResults.capabilities)
                 deviceList.add(
-                    scanResults.SSID.toString() + " - " + scanResults.capabilities
+                    scanResults.SSID.toString()// + " - " + scanResults.capabilities
                 )
             }
 
