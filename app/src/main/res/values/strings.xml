@@ -2,4 +2,13 @@
     <string name="app_name">BerryApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="analyticalPieChartAmount">Всего</string>
+    <string-array name="analyticalPieChartColorArray">
+        <item>#E480F4</item>
+        <item>#6CC3F3</item>
+        <item>#7167ED</item>
+        <item>#D9455F</item>
+        <item>#6054EA</item>
+    </string-array>
+
 </resources>

@@ -36,6 +36,7 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -61,6 +62,7 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 
+
     // Coroutine Lifecycle Scopes
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -71,5 +73,7 @@ dependencies {
     // OkHttp
     implementation(libs.logging.interceptor)
     implementation(libs.okhttp)
+
+    implementation ("com.android.volley:volley:1.2.1")
 
 }
