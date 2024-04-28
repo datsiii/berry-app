@@ -32,7 +32,7 @@ class DeviceFragment : Fragment() {
     }
     private fun fillList(): List<String> {
         val data = mutableListOf<String>()
-        (0..10).forEach { i -> data.add("$i device") }
+        (1..3).forEach { i -> data.add("$i device") }
         return data
     }
 

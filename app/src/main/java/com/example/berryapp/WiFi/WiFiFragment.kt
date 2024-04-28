@@ -2,20 +2,25 @@ package com.example.berryapp
 
 import android.Manifest
 import android.content.Context
+import android.content.Intent
 import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.net.wifi.WifiManager
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ListView
 import android.widget.Toast
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import com.example.berryapp.WiFi.WiFiReceiver
 import com.example.berryapp.databinding.FragmentWiFiBinding
+
 
 class WiFiFragment : Fragment() {
     private lateinit var binding: FragmentWiFiBinding
@@ -66,7 +71,20 @@ class WiFiFragment : Fragment() {
             )
             activityResultLauncher.launch(appPerms)
         }
+        wifiList.setOnItemClickListener { list, view, position, id ->
+            Log.i("HelloListView", "You clicked Item: $id at position:$position")
+            val dialog = DevDialog.newInstance(text = "Description", hint = "Description", isMultiline = true)
+            dialog.onOk = {
+                val text = dialog.editText.text
+                // do something
+            }
+            dialog.onCancel = {
+            }
+            var fragmentManager = (activity as FragmentActivity).supportFragmentManager
+            dialog.show(fragmentManager, "editDescription")
+        }
     }
+
 
     override fun onResume() {
         super.onResume()
